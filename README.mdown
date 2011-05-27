@@ -1,0 +1,26 @@
+# chef-keys
+
+Creates keys in `/home/chef/.ssh/` from a data bag.
+
+
+## Assumptions
+
+`/home/chef` belongs to user `chef` which belongs to group `chef`.
+
+
+## Attributes
+
+* `keys/databag`: string containing name of data bag containing the keys
+* `keys/key_name`: name of the keypair to be copied
+
+
+## Recipes
+
+* `keys`: copies keys into `/home/chef/.ssh/`
+
+
+## Legal
+
+* Written by [Carlo Zottmann](http://github.com/carlo/)
+* Liability in case of anything: definitely not me.
+* License: [WTFPL](http://en.wikipedia.org/wiki/WTFPL).
