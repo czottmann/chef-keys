@@ -5,7 +5,7 @@ Creates keys in `/home/chef/.ssh/` from a data bag.
 
 ## Assumptions
 
-`/home/chef` belongs to user `chef` which belongs to group `chef`.
+You are running on a POSIX machine. no windoze.
 
 
 ## Attributes
@@ -22,6 +22,9 @@ Creates keys in `/home/chef/.ssh/` from a data bag.
 ## Data bag structure example
 
     "ssh_keys": {
+      "user":"vagrant",
+      "group":"vagrant"
+      "path":"/home/vagrant/.ssh/"
       "machine_1": {
         "id_rsa": "private key goes here",
         "id_rsa.pub": "public key goes here"
@@ -32,5 +35,6 @@ Creates keys in `/home/chef/.ssh/` from a data bag.
 ## Legal
 
 * Written by [Carlo Zottmann](http://github.com/carlo/)
+* minor updates by [Bill Cromie](http://github.com/cromulus)
 * Liability in case of anything: definitely not me.
 * License: [WTFPL](http://en.wikipedia.org/wiki/WTFPL).
