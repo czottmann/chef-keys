@@ -17,7 +17,7 @@ data_bag_item( "#{ node['keys']['databag'] }", "#{ node['keys']['key_name'] }" )
   end
 end
 
-data_bag_item( node['keys']['databag'], node['keys'['key_name'] ).each do |k, v|
+data_bag_item( "#{ node['keys']['databag'] }", "#{ node['keys']['key_name'] }" ).each do |k, v|
   next unless k.match(/^known_/)
 
   file "#{dir}/#{k}" do
@@ -36,7 +36,7 @@ directory dir do
 end
 
 
-data_bag_item( node['keys']['databag'], node['keys']['key_name'] ).each do |k, v|
+data_bag_item( "#{ node['keys']['databag'] }", "#{ node['keys']['key_name'] }" ).each do |k, v|
   next unless k.match(/^id_/)
 
   file "#{dir}/#{k}" do
@@ -47,7 +47,7 @@ data_bag_item( node['keys']['databag'], node['keys']['key_name'] ).each do |k, v
   end
 end
 
-data_bag_item( node['keys']['databag'], node['keys']['key_name'] ).each do |k, v|
+data_bag_item( "#{ node['keys']['databag'] }", "#{ node['keys']['key_name'] }" ).each do |k, v|
   next unless k.match(/^known_/)
 
   file "#{dir}/#{k}" do
