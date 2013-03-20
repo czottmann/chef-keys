@@ -1,5 +1,5 @@
-# chef-keys
-
+#chef-keys [![Build Status](https://secure.travis-ci.org/cdracars/chef-keys.png?branch=master)](http://travis-ci.org/cdracars/chef-keys)
+-------------------
 Creates keys in `/home/chef/.ssh/` from a data bag.
 
 

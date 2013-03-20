@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+
+gem 'rake'
+gem 'foodcritic'
+gem 'chef', '~> 10.12.0'
+gem 'moneta', '~> 0.6.0'
