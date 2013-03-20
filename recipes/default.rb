@@ -1,8 +1,8 @@
 dir = "/home/vagrant/.ssh"
 
 directory dir do
-  owner "vagrant"
-  group "vagrant"
+  owner node['keys']['user']
+  group node['keys']['user']
   action :create
 end
 
