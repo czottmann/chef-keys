@@ -8,10 +8,10 @@ end
 
 data_bag_item( node[:keys][:databag], node[:keys][:key_name] ).each do |k, v|
  next unless k.match(/^id_/)
-  
+
   file "#{dir}/#{k}" do
-    owner "vagrant"
-    group "vagrant"
+    owner node['keys']['user']
+    group node['keys']['user']
     mode k.match(/\.pub$/) ? "644" : "600"
     content v
   end
@@ -19,10 +19,10 @@ end
 
 data_bag_item( node[:keys][:databag], node[:keys][:key_name] ).each do |k, v|
   next unless k.match(/^known_/)
-  
+
   file "#{dir}/#{k}" do
-    owner "vagrant"
-    group "vagrant"
+    owner node['keys']['user']
+    group node['keys']['user']
     content v
   end
 end
@@ -38,7 +38,7 @@ end
 
 data_bag_item( node[:keys][:databag], node[:keys][:key_name] ).each do |k, v|
   next unless k.match(/^id_/)
-  
+
   file "#{dir}/#{k}" do
     owner "root"
     group "root"
@@ -49,7 +49,7 @@ end
 
 data_bag_item( node[:keys][:databag], node[:keys][:key_name] ).each do |k, v|
   next unless k.match(/^known_/)
-  
+
   file "#{dir}/#{k}" do
     owner "root"
     group "root"
